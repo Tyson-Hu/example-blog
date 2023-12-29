@@ -15,6 +15,7 @@ const Edit = () => {
 
     const saveData = () => {
         if (process.env.NODE_ENV === "development") {
+            console.log("sending data")
             fetch("/api/portfolio", {
                 method: "POST",
                 headers: {
@@ -899,3 +900,5 @@ const Edit = () => {
         </div>
     )
 };
+
+export default Edit;

@@ -1,8 +1,8 @@
 import fs from 'fs';
 import { join } from 'path';
 
-export default function handler(req, res) {
-    const portfolioData = join(process.cwd(), 'data', 'portfolio.json');
+const handler = (req, res) => {
+    const portfolioData = join(process.cwd(), 'src', 'data', 'portfolio.json');
     if (process.env.NODE_ENV === 'development') {
         if (req.method === 'POST') {
             try {
@@ -11,6 +11,7 @@ export default function handler(req, res) {
                     JSON.stringify(req.body),
                     "utf8",
                 );
+                console.log("Data written to file");
             }
             catch (err) {
                 console.log(err);
@@ -22,3 +23,5 @@ export default function handler(req, res) {
         }
     }
 }
+
+export default handler;

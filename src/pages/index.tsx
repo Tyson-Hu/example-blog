@@ -26,7 +26,7 @@ const Home = () => {
         window.scrollTo({
             top: workRef.current.offsetTop,
             left: 0,
-            behavior: "smooth"
+            behavior: "smooth",
         });
     };
 
@@ -34,7 +34,7 @@ const Home = () => {
         window.scrollTo({
             top: aboutRef.current.offsetTop,
             left: 0,
-            behavior: "smooth"
+            behavior: "smooth",
         });
     };
 
@@ -122,7 +122,7 @@ const Home = () => {
                 {/* This button should not go into production */}
                 {process.env.NODE_ENV === "development" && (
                     <div className="fixed bottom-5 right-5">
-                        <Link href="/edit">
+                        <Link href="/edit" legacyBehavior>
                             <Button type="primary">Edit Data</Button>
                         </Link>
                     </div>
@@ -136,7 +136,7 @@ const Home = () => {
                 <Footer/>
             </div>
         </div>
-    )
+    );
 };
 
 export default Home;

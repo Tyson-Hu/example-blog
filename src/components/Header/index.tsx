@@ -26,15 +26,29 @@ const Header: React.FC<HeaderProps> = ({ handleWorkScroll, handleAboutScroll, is
                 {({ open }) => (
                     <>
                         <div className="flex items-center justify-between p-2 laptop:p-0">
-                            <h1 onClick={() => router.push("/")} className="font-medium p-2 laptop:p-0 link">
+                            <h1
+                                onClick={() => router.push("/")}
+                                className="font-medium p-2 laptop:p-0 link"
+                            >
                                 {name}.
                             </h1>
+
                             <div className="flex items-center">
                                 {data.darkMode && (
-                                <Button onClick={() => setTheme(theme === "dark" ? "light": "dark")}>
-                                    <img className="h-6" src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}  alt="theme mode"/>
-                                </Button>
+                                    <Button
+                                        onClick={() =>
+                                            setTheme(theme === "dark" ? "light" : "dark")
+                                        }
+                                    >
+                                        <img
+                                            className="h-6"
+                                            src={`/images/${
+                                                theme === "dark" ? "moon.svg" : "sun.svg"
+                                            }`}
+                                        ></img>
+                                    </Button>
                                 )}
+
                                 <Popover.Button>
                                     <img
                                         className="h-5"
@@ -47,13 +61,13 @@ const Header: React.FC<HeaderProps> = ({ handleWorkScroll, handleAboutScroll, is
                                                     ? "cancel.svg"
                                                     : "cancel-white.svg"
                                         }`}
-                                     alt="theme mode"/>
+                                    ></img>
                                 </Popover.Button>
                             </div>
                         </div>
                         <Popover.Panel
                             className={`absolute right-0 z-10 w-11/12 p-4 ${
-                                theme === "dark" ? "bg-dark-800" : "bg-white"
+                                theme === "dark" ? "bg-slate-800" : "bg-white"
                             } shadow-md rounded-md`}
                         >
                             {!isBlog ? (
@@ -64,22 +78,41 @@ const Header: React.FC<HeaderProps> = ({ handleWorkScroll, handleAboutScroll, is
                                         <Button onClick={() => router.push("/blog")}>Blog</Button>
                                     )}
                                     {showResume && (
-                                        <Button onClick={() => router.push("/resume")}>Resume</Button>
+                                        <Button
+                                            onClick={() =>
+                                                () => window.open("mailto:me@tianzhe.me")
+                                            }
+                                        >
+                                            Resume
+                                        </Button>
                                     )}
-                                    <Button onClick={() => window.open("mailto:tysonhu.dev@gmail.com")}>
+
+                                    <Button
+                                        onClick={() => window.open("mailto:me@tianzhe.me")}
+                                    >
                                         Contact
                                     </Button>
                                 </div>
                             ) : (
                                 <div className="grid grid-cols-1">
-                                    <Button onClick={() => router.push("/")} classes="first:ml-1">Home</Button>
+                                    <Button onClick={() => router.push("/")} classes="first:ml-1">
+                                        Home
+                                    </Button>
                                     {showBlog && (
                                         <Button onClick={() => router.push("/blog")}>Blog</Button>
                                     )}
                                     {showResume && (
-                                        <Button onClick={() => router.push("/resume")} classes="first:ml-1">Resume</Button>
+                                        <Button
+                                            onClick={() => router.push("/resume")}
+                                            classes="first:ml-1"
+                                        >
+                                            Resume
+                                        </Button>
                                     )}
-                                    <Button onClick={() => window.open("mailto:tysonhu.dev@gmail.com")}>
+
+                                    <Button
+                                        onClick={() => window.open("mailto:me@tianzhe.me")}
+                                    >
                                         Contact
                                     </Button>
                                 </div>
@@ -107,14 +140,25 @@ const Header: React.FC<HeaderProps> = ({ handleWorkScroll, handleAboutScroll, is
                             <Button onClick={() => router.push("/blog")}>Blog</Button>
                         )}
                         {showResume && (
-                            <Button onClick={() => router.push("/resume")} classes="first:ml-1">Resume</Button>
+                            <Button
+                                onClick={() => router.push("/resume")}
+                                classes="first:ml-1"
+                            >
+                                Resume
+                            </Button>
                         )}
-                        <Button onClick={() => window.open("mailto:tysonhu.dev@gmail.com")}>
+
+                        <Button onClick={() => window.open("mailto:me@tianzhe.me")}>
                             Contact
                         </Button>
                         {mounted && theme && data.darkMode && (
-                            <Button onClick={() => setTheme(theme === "dark" ? "light": "dark")}>
-                                <img className="h-6" src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}  alt="theme mode"/>
+                            <Button
+                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                            >
+                                <img
+                                    className="h-6"
+                                    src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
+                                ></img>
                             </Button>
                         )}
                     </div>
@@ -125,14 +169,26 @@ const Header: React.FC<HeaderProps> = ({ handleWorkScroll, handleAboutScroll, is
                             <Button onClick={() => router.push("/blog")}>Blog</Button>
                         )}
                         {showResume && (
-                            <Button onClick={() => router.push("/resume")} classes="first:ml-1">Resume</Button>
+                            <Button
+                                onClick={() => router.push("/resume")}
+                                classes="first:ml-1"
+                            >
+                                Resume
+                            </Button>
                         )}
-                        <Button onClick={() => window.open("mailto:tysonhu.dev@gmail.com")}>
+
+                        <Button onClick={() => window.open("mailto:me@tianzhe.me")}>
                             Contact
                         </Button>
+
                         {mounted && theme && data.darkMode && (
-                            <Button onClick={() => setTheme(theme === "dark" ? "light": "dark")}>
-                                <img className="h-6" src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}  alt="theme mode"/>
+                            <Button
+                                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                            >
+                                <img
+                                    className="h-6"
+                                    src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
+                                ></img>
                             </Button>
                         )}
                     </div>

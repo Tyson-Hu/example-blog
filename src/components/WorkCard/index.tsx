@@ -1,7 +1,7 @@
 import React from "react";
 
 interface WorkCardProps {
-    img: string;
+    img: any;
     name: string;
     description: string;
     onClick: () => void;
@@ -15,7 +15,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ img, name, description, onClick }) 
         >
             <div
                 className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 hover:scale-300 h-48 mob:h-auto"
-                style={{ height: "600%" }}
+                style={{ height: "600px" }}
             >
                 <img
                     className="h-full w-full object-cover hover:scale-110 transition-all ease-out duration-300"

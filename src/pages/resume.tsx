@@ -9,7 +9,8 @@ import Socials from "@/components/Socials";
 import ProjectResume from "@/components/ProjectResume";
 
 import data from "@/data/portfolio.json";
-import { name, resume, showResume } from "@/data/portfolio.json";
+import { resume } from "@/data/portfolio.json";
+import { name, showResume } from "@/data/portfolio.json";
 
 const Resume = () => {
     const router = useRouter();
